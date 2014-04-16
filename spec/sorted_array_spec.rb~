@@ -1,6 +1,6 @@
 require 'rspec'
 require './sorted_array.rb'
-#require 'pry'
+require 'pry'
 
 shared_examples "yield to all elements in sorted array" do |method|
     specify do 

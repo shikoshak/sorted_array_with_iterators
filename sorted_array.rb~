@@ -166,9 +166,19 @@ class SortedArray
                 index += 1
              end
           end
-         def find s, &block 
-           
+        def find s, &block
+               r = RS[s]
+                if r
+               r.each do |p|
+                m = p.match t
+           return m if m
           end
+          nil
+         end
+end
+        # def find s, &block 
+         #  puts block.inspect
+         # end
 
          def inject acc=nil, &block
          end
