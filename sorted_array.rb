@@ -166,10 +166,37 @@ class SortedArray
                 index += 1
              end
           end
-         def find s, &block 
-           
-          end
+          
+          
+     # Passes each entry in enum to block. 
+     #Returns the first for which block is not false. 
+     #If no object matches, calls if none and returns its result when it is specified,
+     # or returns nil otherwise.     
+          
+         def find &block 
+           #index =0
+             self.each do |item|
+             
+             if yield item  
+               return item                   
+             end 
+            end
+           nil
+         end
 
          def inject acc=nil, &block
+           if acc.nil?
+             acc = 0 
+           end
+           
+           index =0
+             self.each do |item|
+             
+                 acc =yield acc, item 
+                
+                index += 1
+               end
+           acc
+         
          end
 end         
